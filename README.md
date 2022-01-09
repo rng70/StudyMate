@@ -4,10 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Installation
 To initialized this project locally run the following commands
-`git clone https://github.com/rng70/studymate.get`
-`cd studymate`
-`npm install`
-`npm start` to start the project locally
+  `git clone https://github.com/rng70/studymate.get`
+  `cd studymate`
+  `npm install`
+  `npm start` to start the project locally
 
 ## Available Scripts
 
