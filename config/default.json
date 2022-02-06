@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://rng70:rng70@studymate.3eimy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret": "nothing-is-secret"
+    "jwtSecret": "nothing-is-secret",
+    "mongoURI": "mongodb+srv://rng70:rng70@studymate.3eimy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 }
