@@ -16,12 +16,12 @@ const jwt = require('jsonwebtoken');
 router.post('/', [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Please enter a password with 6 or more charactes').isLength({min: 6})
-],  async (req, res) => {
+    check('password', 'Please enter a password with 6 or more charactes').isLength({ min: 6 })
+], async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return res.status(400).json({errors: errors.array()});
+        return res.status(400).json({ errors: errors.array() });
     }
 
     const { name, email, password } = req.body;
@@ -38,7 +38,7 @@ router.post('/', [
         let userExists = await User.findOne({ email: email });
 
         if (userExists) {
-            return res.status(400).json({errors: [{ msg: "User already exists"}] });
+            return res.status(400).json({ errors: [{ msg: "User already exists" }] });
         }
 
         /* Case-2: Get user gravatar */
@@ -81,13 +81,13 @@ router.post('/', [
                     throw err;
                 }
                 res.json({ token });
-        });
+            });
         // res.send('User registered')
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server failure');
     }
-})
+});
 
 
 module.exports = router;
