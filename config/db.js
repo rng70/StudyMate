@@ -4,9 +4,13 @@ const db = config.get('mongoURI');
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(db, {
-            useNewUrlParser: true
-        });
+        /**
+         * mongodb version > 6 no longer required 
+         * useNewUrlParser, useCreateIndex, useUnifiedTopology 
+         * they are always TRUE
+         * useFindAndModify which is by always FALSE
+         */
+        await mongoose.connect(db);
 
         console.log("MongoDB connected")
     } catch (err) {
