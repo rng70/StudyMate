@@ -28,10 +28,10 @@ router.post('/', [
     
     try {
         /**
-        * Case-1: Check if the user exists
-        * Case-2: Get user gravatar
-        * Case-3: Encrypt Password
-        * Case-4: Return jsonwebtokens
+        * @desc Case-1: Check if the user exists
+        * @desc Case-2: Get user gravatar
+        * @desc Case-3: Encrypt Password
+        * @desc Case-4: Return jsonwebtokens
         */
         
         /* Case-1: Check if the user exists */

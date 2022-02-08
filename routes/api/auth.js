@@ -43,9 +43,9 @@ router.post('/', [
     
     try {
         /**
-        * Case-1: Check if the user exists
-        * Case-2: Match the email and password
-        * Case-3: Return jsonwebtokens
+        * @desc Case-1: Check if the user exists
+        * @desc Case-2: Match the email and password
+        * @desc Case-3: Return jsonwebtokens
         */
         
         /* Case-1: Check if the user exists */
