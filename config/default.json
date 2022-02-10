@@ -1,4 +1,7 @@
 {
     "jwtSecret": "nothing-is-secret",
-    "mongoURI": "mongodb+srv://rng70:rng70@studymate.3eimy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://rng70:rng70@studymate.3eimy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "githubClientId": "4dfd61e4ee5daaf8c679",
+    "githubSecret": "e7bb18c7d991ac1815631f3930383ec5c84a77c2"
+
 }
