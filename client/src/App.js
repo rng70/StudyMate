@@ -1,14 +1,14 @@
 import './App.css';
+import store from './store';
+import { Provider } from 'react-redux';
+import { loadUser } from './actions/auth';
 import { Fragment, useEffect } from 'react';
-import { Navbar, Landing } from './components';
-import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store';
-import { loadUser } from './actions/auth';
+import { Navbar, Landing } from './components';
 import setAuthToken from './utils/setAuthToken';
+import Register from './components/auth/Register';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 if (localStorage.token) {
         setAuthToken(localStorage.token);
