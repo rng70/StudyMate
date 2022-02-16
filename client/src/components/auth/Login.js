@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth';
 
-export const Login = () => {
+const Login = ({login, isAuthenticated}) => {
 
+    let navigation = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -13,31 +17,17 @@ export const Login = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
+        login(email, password);
+    }
 
-            console.log(formData); //TODO delete
-            // const newUser = {
-            //     name,
-            //     email,
-            //     password
-            // }
-
-            // try {
-            //     const config = {
-            //         headers: {
-            //             'Content-Type': 'application/json'
-            //         }
-            //     }
-
-            //     const body = JSON.stringify(newUser);
-            //     const res = await axios.post('/api/users', body, config);
-            //     console.log(res.data);
-            // } catch (err) {
-            //     console.error(err.response.data);
-            // }
-        
+    if (isAuthenticated) {
+        navigation('/dashboard')
     }
     return (
         <>
+            {isAuthenticated && 
+                console.log("isAuth ==> ", isAuthenticated)
+            }
             <h1 className="large text-primary">Sign In</h1>
             <p className="lead"><i className="fas fa-user"></i> Sign In with Your Account</p>
             <form className="form" onSubmit={e => onSubmit(e)}>
@@ -68,3 +58,14 @@ export const Login = () => {
         </>
     )
 }
+
+Login.propTypes = {
+    login: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, {login})(Login);
