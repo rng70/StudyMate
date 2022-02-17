@@ -1,5 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { REGISTER_SUCCESS, REGISTER_FAIL, USER_LOADED, AUTH_ERROR, LOGIN_SUCCESS, LOGIN_FAIL } from "../actions/types";
+import {
+    REGISTER_SUCCESS,
+    LOGIN_SUCCESS,
+    REGISTER_FAIL,
+    USER_LOADED,
+    AUTH_ERROR,
+    LOGIN_FAIL
+} from "../actions/types";
 
 const initialState = {
     token: localStorage.getItem('token'),
