@@ -11,7 +11,7 @@ export const Navbar = () => {
                 <li>
                     <Link to="#">Channel</Link></li>
                 <li>
-                    <Link to="profiles.html">Forum</Link>
+                    <Link to="/posts">Forum</Link>
                 </li>
                 <li>
                     <Link to="/register">Register (Conditional)</Link>

@@ -8,6 +8,8 @@ import Alert from './components/layout/Alert';
 import { Navbar, Landing } from './components';
 import setAuthToken from './utils/setAuthToken';
 import Register from './components/auth/Register';
+import Posts from './components/forum/Posts';
+import Post from './components/post/Post';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 if (localStorage.token) {
@@ -30,6 +32,9 @@ const App = () => {
                             <Route path='/' element={<Landing />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/login" element={<Login />} />
+                            
+                            <Route path="/posts" element={<Posts />} />
+                            <Route path="/posts/:id" element={<Post />} />
                         </Routes>
                     </section>
                 </Fragment>
