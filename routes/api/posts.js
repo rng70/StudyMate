@@ -193,7 +193,7 @@ router.post('/comment/:id',
             };
 
             post.comments.unshift(newComment);
-            await newPost.save();
+            await newComment.save();
             return res.json(post.comments);
         } catch (err) {
             console.error(err.message);
