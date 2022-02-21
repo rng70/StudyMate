@@ -193,6 +193,8 @@ router.post('/comment/:id',
             };
 
             post.comments.unshift(newComment);
+            await post.save();
+
             return res.json(post.comments);
         } catch (err) {
             console.error(err.message);
@@ -207,10 +209,11 @@ router.post('/comment/:id',
  */ 
 router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     try {
-        const post = Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id);
 
         /* Now pull out the comment */
-        const comment = post.comment.find(comment => comment.id === req.params.comment_id);
+        const comment = post.comments.find(comment => comment.id === req.params.comment_id);
+
 
         /* Make sure comments exists */
         if (!comment) {
@@ -228,7 +231,7 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
         post.comments.splice(removeIndex, 1);
         await post.save();
 
-        res.json(posts.comments);
+        res.json(post.comments);
     } catch (err) {
             console.error(err.message);
             return res.status(500).send('Server Error');
