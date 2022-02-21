@@ -10,16 +10,20 @@ import setAuthToken from './utils/setAuthToken';
 import Register from './components/auth/Register';
 import Posts from './components/forum/Posts';
 import Post from './components/post/Post';
+import Dashboard from "./components/dashboard/Dashboard";
+import PrivateRoute from "./components/routing/PrivateRoute";
+import CreateProfile from "./components/profile-forms/CreateProfile";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 if (localStorage.token) {
-        setAuthToken(localStorage.token);
+  setAuthToken(localStorage.token);
 }
 
 const App = () => {
-    useEffect(() => {
-        store.dispatch(loadUser);
-    }, []);
+  useEffect(() => {
+    store.dispatch(loadUser);
+  }, []);
+
 
     return (
         <Provider store={store}>
@@ -32,7 +36,8 @@ const App = () => {
                             <Route path='/' element={<Landing />} />
                             <Route path="/register" element={<Register />} />
                             <Route path="/login" element={<Login />} />
-                            
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/create-profile" element={<CreateProfile />} />
                             <Route path="/posts" element={<Posts />} />
                             <Route path="/posts/:id" element={<Post />} />
                         </Routes>
