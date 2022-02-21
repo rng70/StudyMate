@@ -21,13 +21,10 @@ const Login = ({login, isAuthenticated}) => {
     }
 
     if (isAuthenticated) {
-        navigation('/dashboard')
+        navigation('/posts')
     }
     return (
         <>
-            {isAuthenticated && 
-                console.log("isAuth ==> ", isAuthenticated)
-            }
             <h1 className="large text-primary">Sign In</h1>
             <p className="lead"><i className="fas fa-user"></i> Sign In with Your Account</p>
             <form className="form" onSubmit={e => onSubmit(e)}>
